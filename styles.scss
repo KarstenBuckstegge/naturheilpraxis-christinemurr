@@ -14,15 +14,16 @@ body {
     min-height: 100vh;
     justify-content: center;
     align-items: center;
+    padding-bottom: $base * 15;
     background: url('./static/flower.jpeg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left 0 bottom $base*10;
+    background-attachment: fixed;
     font-family: gill-sans-nova, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: $base * 5;
-    background-attachment: fixed;
 }
 
 .main {
@@ -34,7 +35,7 @@ body {
 }
 
 .footer {
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     right: 0;
@@ -68,6 +69,7 @@ body {
 .list {
     display: inline-block;
     text-align: left;
+    padding-left: $base * 8;
 }
 
 
