@@ -1,0 +1,22 @@
+{
+  "name": "naturheilpraxis-christinemurr",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "styles": "node-sass styles.scss styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarstenBuckstegge/naturheilpraxis-christinemurr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarstenBuckstegge/naturheilpraxis-christinemurr/issues"
+  },
+  "homepage": "https://github.com/KarstenBuckstegge/naturheilpraxis-christinemurr#readme",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
