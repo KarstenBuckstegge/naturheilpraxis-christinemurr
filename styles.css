@@ -24,16 +24,19 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  padding: 20px 20px 12px;
-  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  background: white;
   text-align: right; }
 
 .main {
   max-width: 100vw;
-  padding: 20px;
+  padding: 20px 40px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 4px; }
+  @media (max-width: 1024px) {
+    .main {
+      padding: 20px; } }
 
 .footer {
   position: fixed;
@@ -52,6 +55,10 @@ body {
   @media (max-width: 1024px) {
     .h1 {
       font-size: 40px; } }
+
+.h2 {
+  font-family: mahalia, sans-serif;
+  text-align: left; }
 
 .h3 {
   font-size: 30px;
@@ -72,11 +79,51 @@ body {
   .link:hover, .link:active, .link:focus {
     text-decoration: underline; }
 
-.section ~ .section {
-  margin-top: 40px; }
+.columns {
+  display: flex; }
+  @media (max-width: 1024px) {
+    .columns {
+      display: block; } }
+
+.column {
+  flex-grow: 1;
+  width: 50%; }
+  .column + .column {
+    margin-left: 10%; }
+  @media (max-width: 1024px) {
+    .column {
+      width: 100%; }
+      .column + .column {
+        margin-top: 40px;
+        margin-left: 0; } }
+
+.portrait {
+  max-width: 250px;
+  margin-top: 60px;
+  box-shadow: rgba(208, 130, 0, 0.4) 40px 20px 20px; }
+  @media (max-width: 1024px) {
+    .portrait {
+      box-shadow: rgba(208, 130, 0, 0.4) 20px 20px 20px; } }
+
+.paragraph {
+  margin-top: 20px;
+  text-align: right; }
+  @media (max-width: 1024px) {
+    .paragraph {
+      text-align: left;
+      text-align: justify; } }
+
+.info {
+  font-style: italic; }
 
 .impressum {
   flex-direction: column; }
+  .impressum .link {
+    position: fixed;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    background: white; }
   .impressum .main {
     width: 100%;
     max-width: 500px;

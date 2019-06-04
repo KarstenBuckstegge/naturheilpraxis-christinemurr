@@ -35,17 +35,21 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    padding: $base*5 $base*5 $base*3;
-    background: rgba(255, 255, 255, 0.8);
+    padding: $base*5;
+    background: white;
     text-align: right;
 }
 
 .main {
     max-width: 100vw;
-    padding: $base * 5;
+    padding: $base*5 $base*10;
     text-align: center;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.6);
     border-radius: $base;
+
+    @include mediaSmall {
+        padding: $base * 5;
+    }
 }
 
 .footer {
@@ -67,6 +71,11 @@ body {
     @include mediaSmall {
         font-size: $font-size * 2;
     }
+}
+
+.h2 {
+    font-family: mahalia, sans-serif;
+    text-align: left;
 }
 
 .h3 {
@@ -96,16 +105,68 @@ body {
     }
 }
 
-.section {
-    & ~ & {
-        margin-top: $base * 10;
+.columns {
+    display: flex;
+
+    @include mediaSmall {
+        display: block;
     }
+}
+
+.column {
+    flex-grow: 1;
+    width: 50%;
+
+    & + & {
+        margin-left: 10%;
+    }
+
+    @include mediaSmall {
+        width: 100%;
+        
+        & + & {
+            margin-top: $base * 10;
+            margin-left: 0;
+        }
+    }
+}
+
+.portrait {
+    max-width: 250px;
+    margin-top: $base * 15;
+    box-shadow: rgba($orange, .4) 40px 20px 20px;
+
+    @include mediaSmall {
+        box-shadow: rgba($orange, .4) 20px 20px 20px;
+    }
+}
+
+.paragraph {
+    margin-top: $base * 5;
+    text-align: right;
+
+    @include mediaSmall {
+        text-align: left;
+        text-align: justify;
+    }
+}
+
+.info {
+    font-style: italic;
 }
 
 
 // ============== IMPRESSUM ===============
 .impressum {
     flex-direction: column;
+
+    .link {
+        position: fixed;
+        padding: $base * 5;
+        top: 0;
+        left: 0;
+        background: white;
+    }
     
     .main {
         width: 100%;
