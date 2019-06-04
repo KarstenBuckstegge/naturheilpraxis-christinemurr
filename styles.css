@@ -8,7 +8,7 @@ body {
   min-height: 100vh;
   justify-content: center;
   align-items: center;
-  padding-bottom: 60px;
+  padding: 60px 0;
   background: url("./static/flower.jpeg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -18,6 +18,15 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 20px; }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 20px 12px;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: right; }
 
 .main {
   max-width: 100vw;
@@ -45,8 +54,23 @@ body {
       font-size: 40px; } }
 
 .h3 {
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 8px; }
+
+.menu {
+  display: flex;
+  list-style: none; }
+
+.menu__item {
+  font-weight: bold; }
+  .menu__item + .menu__item {
+    margin-left: 24px; }
+
+.link {
+  text-decoration: none;
+  color: #d08200; }
+  .link:hover, .link:active, .link:focus {
+    text-decoration: underline; }
 
 .section ~ .section {
   margin-top: 40px; }
