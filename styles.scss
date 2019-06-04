@@ -1,9 +1,15 @@
 $base: 4px;
 $small-breakpoint: 1024px;
+
 $font-size: 20px;
+
 $orange: #d08200;
 $green: #879e02;
 $grey: #888fa0;
+
+$burger-height-mobile: $base * 8;
+$header-height-mobile: $base * 18;
+$nav-animation-default: 0.4s ease;
 
 @mixin mediaSmall {
     @media (max-width: $small-breakpoint) {
@@ -86,6 +92,25 @@ body {
 .menu {
     display: flex;
     list-style: none;
+
+    @include mediaSmall {
+        display: none;
+        height: 0;
+        opacity: 0;
+    
+        .navigation__toggle:checked~& {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding-bottom: 60px;
+          height: 0;
+          opacity: 0;
+    
+          animation: navigationToggle $nav-animation-default;
+          animation-fill-mode: forwards;
+        }
+      }
 }
 
 .menu__item {
@@ -93,6 +118,11 @@ body {
 
     & + & {
         margin-left: $base * 6;
+
+        @include mediaSmall {
+            margin-left: 0;
+            margin-top: $base * 2;
+        }
     }
 }
 
@@ -155,6 +185,72 @@ body {
     font-style: italic;
 }
 
+// ============== BURGER MENU =============
+  
+  .navigation__toggle {
+    display: none;
+  }
+  
+  .navigation__burger {
+    position: relative;
+    display: none;
+    cursor: pointer;
+  
+    @include mediaSmall {
+      display: block;
+      width: $base * 10;
+      height: $burger-height-mobile;
+    }
+  }
+  
+  .navigation__burger__base {
+    position: absolute;
+    top: 0;
+    transform-origin: left;
+    transition: transform $nav-animation-default;
+  
+    &,
+    &:before,
+    &:after {
+      width: 100%;
+      height: $base * 2;
+      border-radius: 2px;
+      background: black;
+    }
+  
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      transform-origin: left;
+      transition: transform $nav-animation-default, opacity $nav-animation-default;
+    }
+  
+    &:before {
+      top: $base * 3;
+    }
+  
+    &:after {
+      top: $base * 6;
+    }
+  
+    .navigation__toggle:checked~.navigation__toggle__button & {
+      & {
+        transform: translateX(7px) translateY(25px) rotate(-45deg);
+      }
+  
+      &::before {
+        opacity: 0;
+        transform: translateX(7px) translateY(-25px) rotate(45deg);
+      }
+  
+      &::after {
+        transform: translateX(20px) translateY(-44px) rotate(90deg);
+      }
+    }
+  }
+
 
 // ============== IMPRESSUM ===============
 .impressum {
@@ -175,3 +271,17 @@ body {
         text-align: left;
     }
 }
+
+// ============== ANIMATIONS ===============
+
+@keyframes navigationToggle {
+    50% {
+      height: calc(100vh - #{$header-height-mobile});
+      opacity: 0;
+    }
+  
+    to {
+      height: calc(100vh - #{$header-height-mobile});
+      opacity: 1;
+    }
+  }
