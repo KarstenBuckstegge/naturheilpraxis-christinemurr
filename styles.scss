@@ -6,6 +6,7 @@ $font-size: 20px;
 $orange: #d08200;
 $green: #879e02;
 $grey: #888fa0;
+$blue: #315a9a;
 
 $burger-height-mobile: $base * 8;
 $header-height-mobile: $base * 18;
@@ -89,6 +90,10 @@ body {
     margin-bottom: $base * 2;
 }
 
+.right {
+    text-align: right;
+}
+
 .menu {
     display: flex;
     list-style: none;
@@ -133,6 +138,9 @@ body {
     &:hover, &:active, &:focus {
         text-decoration: underline;
     }
+}
+.link--email {
+    color: $blue;
 }
 
 .columns {

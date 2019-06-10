@@ -64,6 +64,9 @@ body {
   font-size: 30px;
   margin-bottom: 8px; }
 
+.right {
+  text-align: right; }
+
 .menu {
   display: flex;
   list-style: none; }
@@ -97,6 +100,9 @@ body {
   color: #d08200; }
   .link:hover, .link:active, .link:focus {
     text-decoration: underline; }
+
+.link--email {
+  color: #315a9a; }
 
 .columns {
   display: flex; }
