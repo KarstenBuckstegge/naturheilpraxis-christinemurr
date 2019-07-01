@@ -4,31 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Ihre Naturheilpraxis in Gengenbach mit den Schwerpunkten: Sanfte Krampfadertherapie, Moderne Wundversorgung, Homöopathie und Darmsanierung.">
     <title>Naturheilpraxis Christine Murr</title>
+
+    <link rel="shortcut icon" href="static/favicon.ico"/>
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/ild3egi.css">
 </head>
 <body>
+    <header class="header">
+        <input class="navigation__toggle" id="navigation__toggle" type="checkbox" />
+        <label class="navigation__toggle__button" for="navigation__toggle">
+            <div class="navigation__burger">
+            <div class="navigation__burger__base"></div>
+            </div>
+        </label>
+
+        <ul class="menu">
+            <li class="menu__item menu__item--active">
+                Home
+            </li>
+            <li class="menu__item">
+                <a class="link" href="werdegang.html">
+                    Mein Werdegang
+                </a>
+            </li>
+            <li class="menu__item">
+                <a class="link" href="therapie.html">
+                    Sanfte Krampfadertherapie
+                </a>
+            </li>
+            <li class="menu__item">
+                <a class="link" href="kontakt.html">
+                    Kontakt
+                </a>
+            </li>
+        </ul>
+    </header>
     <main class="main">
         <h1 class="h1">Naturheilpraxis <span class="nowrap">Christine Murr</span></h1>
         <section class="section">
-            <h3 class="h3">Schwerpunkte:</h3>
-            <ul class="list">
-                <li>Sanfte Krampfadertherapie mit Kochsalzlösung</li>
-                <li>Moderne Wundversorgung</li>
-            </ul>
+            <h3 class="h3">Therapieschwerpunkte:</h3>
+            <p>Sanfte Krampfadertherapie</p>
+            <p>Moderne Wundversorgung</p>
+            <p>Homöopathie</p>
+            <p>Darmsanierung</p>
         </section>
         <section class="section">
             <h3 class="h3">Kontakt:</h3>
             <div>Tel.: 07803 96 69 790</div>
             <div>Mobil: 0160 23 21 467</div>
-            <div>Mail: naturheilpraxis-cm@t-online.de</div>
+            <div>Email: <a class="link link--email" href="mailto:naturheilpraxis-cm@t-online.de">naturheilpraxis-cm@t-online.de</a></div>
         </section>
     </main>
     <footer class="footer">
         <div>&copy; Christine Murr 2019</div>
-        <a href="impressum.html">Impressum</a>
+        <a class="link" href="impressum.html">Impressum</a>
     </footer>
 </body>
 </html>
